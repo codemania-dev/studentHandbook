@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 function App() {
        <div className="App">
-           <spaN>Hello world </span>
+           <span>Hello world </span>
          </div>
     )
    
