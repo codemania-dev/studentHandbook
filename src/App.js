@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
@@ -15,10 +15,20 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import Header from './components/Header';
+import useWindowSize from './utils/useWindowSize';
+import Staff from './pages/Staff';
 
 function App() {
   const location = useLocation();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { width } = useWindowSize();
+
+  //close sidebar if screen is more than  a smaller width
+  useEffect(() => {
+    if (width > 768) {
+      onClose();
+    }
+  }, [onClose, width]);
 
   return (
     <Flex w="100vw" h="100vh" overflow="hidden" as="section">
@@ -29,7 +39,7 @@ function App() {
         h={'full'}
         display={{ base: 'none', md: 'flex' }}
       >
-        <Sidebar />
+        <Sidebar onClose={onClose} />
       </Box>
 
       <Drawer
@@ -41,7 +51,7 @@ function App() {
       >
         <DrawerOverlay />
         <DrawerContent>
-          <Sidebar />
+          <Sidebar onClose={onClose} />
         </DrawerContent>
       </Drawer>
 
@@ -49,14 +59,17 @@ function App() {
         alignItems="flex-start"
         w="full"
         h="100vh"
-        overflowY="auto"
+        overflowY="hidden"
         as="main"
       >
         <Header isOpen={isOpen} onOpen={onOpen} />
         <AnimatePresence exitBeforeEnter>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-          </Routes>
+          <VStack alignItems="flex-start" w="full" h="full" overflowY="auto">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/staff" element={<Staff />} />
+            </Routes>
+          </VStack>
         </AnimatePresence>
       </VStack>
     </Flex>

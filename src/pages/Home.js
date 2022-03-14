@@ -7,7 +7,14 @@ import {
   Flex,
   chakra,
 } from '@chakra-ui/react';
+import Anthem from '../components/Home/Anthem';
+import Foreword from '../components/Home/Foreword';
 import PageWrapper from '../components/PageWrapper';
+import Preface from '../components/Home/Preface';
+import PrincipalOfficers from '../components/Home/PrincipalOfficers';
+import AboutUs from '../components/Home/AboutUs';
+import Vision from '../components/Home/Vision';
+import Mission from '../components/Home/Mission';
 
 const Home = () => {
   return (
@@ -52,6 +59,13 @@ const Home = () => {
           </HStack>
         </VStack>
       </Flex>
+      <Foreword />
+      <Preface />
+      <Anthem />
+      <PrincipalOfficers />
+      <AboutUs />
+      <Vision />
+      <Mission />
     </PageWrapper>
   );
 };

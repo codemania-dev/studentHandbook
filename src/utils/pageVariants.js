@@ -5,12 +5,11 @@
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
 
 const pageVariants = {
-  initial: { y: -100, opacity: 0 },
+  initial: { opacity: 0 },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
       ...transition,
     },
   },
