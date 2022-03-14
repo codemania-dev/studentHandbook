@@ -2,7 +2,13 @@ import { Heading, Text, VStack } from '@chakra-ui/react';
 
 const Foreword = () => {
   return (
-    <VStack alignItems={'center'} margin="100px 0" as="section">
+    <VStack
+      w="full"
+      maxW={'900px'}
+      alignItems={'center'}
+      margin="100px auto"
+      as="section"
+    >
       <Heading size={'md'}>Foreword</Heading>
       <Text textAlign="center">
         The Federal College of Animal Health and Production Technology, Moor

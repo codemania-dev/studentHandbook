@@ -2,7 +2,13 @@ import { Heading, VStack, Text } from '@chakra-ui/react';
 
 const Preface = () => {
   return (
-    <VStack alignItems={'center'} margin="100px 0" as="section">
+    <VStack
+      w="full"
+      maxW={'900px'}
+      alignItems={'center'}
+      margin="100px auto"
+      as="section"
+    >
       <Heading size={'md'}>Preface</Heading>
       <Text textAlign={'center'}>
         It is with great joy and gratitude to almighty God that I present to you
