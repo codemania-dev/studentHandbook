@@ -7,4 +7,8 @@ export const UrlLinks = [
     name: 'Teaching Staff',
     url: '/staff',
   },
+  {
+    name: 'Courses',
+    url: '/course',
+  },
 ];

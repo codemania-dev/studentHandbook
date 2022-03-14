@@ -17,6 +17,7 @@ import {
 import Header from './components/Header';
 import useWindowSize from './utils/useWindowSize';
 import Staff from './pages/Staff';
+import Courses from './pages/Courses';
 
 function App() {
   const location = useLocation();
@@ -68,6 +69,7 @@ function App() {
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
               <Route path="/staff" element={<Staff />} />
+              <Route path="/course" element={<Courses />} />
             </Routes>
           </VStack>
         </AnimatePresence>
