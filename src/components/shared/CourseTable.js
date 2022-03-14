@@ -18,13 +18,13 @@ const CourseTable = ({ semester, data }) => {
         <Table w="full" size="sm">
           <Thead>
             <Tr>
-              {data[0].header.map((header, index) => (
+              {data.header.map((header, index) => (
                 <Th key={index}>{header}</Th>
               ))}
             </Tr>
           </Thead>
           <Tbody>
-            {data[0].rows.map((row, index) => (
+            {data.rows.map((row, index) => (
               <Tr key={index}>
                 <Td>{row.SN}</Td>
                 <Td>{row['Course Code']}</Td>

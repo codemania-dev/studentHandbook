@@ -1,8 +1,16 @@
-import { Box, CloseButton, Flex, Heading, VStack } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import {
+  Box,
+  CloseButton,
+  Flex,
+  chakra,
+  Heading,
+  VStack,
+} from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import { UrlLinks } from '../utils/NavLinks';
 
 const Sidebar = ({ onClose }) => {
+  const navigate = useNavigate();
   return (
     <Flex
       borderRight={'1px solid'}
@@ -24,9 +32,25 @@ const Sidebar = ({ onClose }) => {
       </Box>
       <VStack mt="10px" w="full" alignItems="flex-start">
         {UrlLinks.map((link, index) => (
-          <Link w="full" onClick={onClose} to={link.url} key={index}>
-            {link.name}
-          </Link>
+          <Flex
+            as="a"
+            alignItems={'center'}
+            px="5px"
+            cursor="pointer"
+            w="full"
+            onClick={() => {
+              navigate(link.url);
+              onClose();
+            }}
+            borderRadius="5px"
+            _hover={{
+              background: 'gray.100',
+              color: 'black',
+            }}
+            key={index}
+          >
+            {link.icon} <chakra.span ml={'5px'}>{link.name}</chakra.span>
+          </Flex>
         ))}
       </VStack>
     </Flex>

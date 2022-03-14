@@ -18,6 +18,8 @@ import Header from './components/Header';
 import useWindowSize from './utils/useWindowSize';
 import Staff from './pages/Staff';
 import Courses from './pages/Courses';
+import Synopis from './pages/Synopis';
+import SynopisHnd from './pages/SynopisHnd';
 
 function App() {
   const location = useLocation();
@@ -70,6 +72,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/staff" element={<Staff />} />
               <Route path="/course" element={<Courses />} />
+              <Route path="/synopis-Nd" element={<Synopis />} />
+              <Route path="/synopis-Hnd" element={<SynopisHnd />} />
             </Routes>
           </VStack>
         </AnimatePresence>
