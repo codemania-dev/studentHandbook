@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, VStack } from '@chakra-ui/react';
+import { Box, CloseButton, Flex, Heading, VStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { UrlLinks } from '../utils/NavLinks';
 
@@ -17,7 +17,10 @@ const Sidebar = ({ onClose }) => {
       p="5px"
     >
       <Box h="54px" w="full" borderBottom="1px solid" borderColor="gray.500">
-        <Heading>Logo</Heading>
+        <Flex w="full" alignItems="center" justifyContent={'space-between'}>
+          <Heading>Logo</Heading>
+          <CloseButton size="sm" onClick={onClose} />
+        </Flex>
       </Box>
       <VStack mt="10px" w="full" alignItems="flex-start">
         {UrlLinks.map((link, index) => (
