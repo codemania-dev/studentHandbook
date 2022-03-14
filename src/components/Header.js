@@ -18,7 +18,7 @@ const Header = ({ onOpen, isOpen }) => {
       borderColor={'gray.500'}
       p={'5px'}
       w="full"
-      justifyContents="space-between"
+      justifyContent="space-between"
     >
       <VStack spacing={0} alignItems={'flex-start'} w="full">
         <Heading fontSize={'1.5rem'}>IART</Heading>
